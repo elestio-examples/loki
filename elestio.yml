@@ -7,6 +7,16 @@ ports:
     public: true
     path: "/"
     isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "3131"
+    targetPort: "3100"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: true
+    login: "root"
+    password: "random_password"
 environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
