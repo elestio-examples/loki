@@ -13,5 +13,5 @@ Deploy Loki server with CI/CD on Elestio
 You can can open Loki UI here:
 
     URL: https://[CI_CD_DOMAIN]
-    email:[ADMIN_EMAIL]
+    email: root
     password: [ADMIN_PASSWORD]
