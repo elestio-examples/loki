@@ -10,8 +10,14 @@ Deploy Loki server with CI/CD on Elestio
 
 # Once deployed ...
 
-You can can open Loki UI here:
+You can open Grafana UI here:
 
     URL: https://[CI_CD_DOMAIN]
+    email: root
+    password: [ADMIN_PASSWORD]
+
+You can use Loki with the following credentials:
+
+    URL: https://[CI_CD_DOMAIN]:3131
     email: root
     password: [ADMIN_PASSWORD]
