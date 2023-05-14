@@ -24,12 +24,12 @@ You can use Loki with the following credentials:
 
 # API
 
-for POST requests you can use the following example:
+For POST requests you can use the following example:
 
     curl -X POST \
     'https://[CI_CD_DOMAIN]:3131/loki/api/v1/push' \
     --header 'Accept: */*' \
-    -u root:[ADMIN_PASSWORD]
+    -u root:[ADMIN_PASSWORD] \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "streams": [
@@ -39,7 +39,7 @@ for POST requests you can use the following example:
             },
             "values": [
                 [
-                "1683007603000000000",
+                "'"$(date +%s%N)"'",
                 "fizzbuzz-test"
                 ]
             ]
@@ -47,7 +47,7 @@ for POST requests you can use the following example:
         ]
     }'
 
-for GET requests you can use the following example:
+For GET requests you can use the following example:
 
     curl -G -s  "https://[CI_CD_DOMAIN]:3131/loki/api/v1/query_range" --data-urlencode 'query={test="bar2"}' \
     -u root:[ADMIN_PASSWORD]
