@@ -24,19 +24,12 @@ You can use Loki with the following credentials:
 
 # API
 
-for GET requests you can use the following example:
-
-    curl -X GET \
-    'https://[CI_CD_DOMAIN]:3131/loki/api/v1/query' \
-    --header 'Accept: */*' \
-    --header 'Authorization: Basic [ADMIN_PASSWORD]'
-
 for POST requests you can use the following example:
 
     curl -X POST \
     'https://[CI_CD_DOMAIN]:3131/loki/api/v1/push' \
     --header 'Accept: */*' \
-    --header 'Authorization: Basic [ADMIN_PASSWORD]' \
+    -u root:[ADMIN_PASSWORD]
     --header 'Content-Type: application/json' \
     --data-raw '{
         "streams": [
@@ -53,5 +46,10 @@ for POST requests you can use the following example:
             }
         ]
     }'
+
+for GET requests you can use the following example:
+
+    curl -G -s  "https://[CI_CD_DOMAIN]:3131/loki/api/v1/query_range" --data-urlencode 'query={test="bar2"}' \
+    -u root:[ADMIN_PASSWORD]
 
 For more informations: <a target="_blank" href="https://grafana.com/docs/loki/latest/api/">Loki api documentation</a>
