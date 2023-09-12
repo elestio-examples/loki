@@ -2,14 +2,14 @@ version: "3"
 
 services:
   loki:
-    image: grafana/loki:2.8.0
+    image: grafana/loki:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:
       - "172.17.0.1:3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
 
   promtail:
-    image: grafana/promtail:2.8.0
+    image: grafana/promtail:${SOFTWARE_VERSION_TAG}
     restart: always
     volumes:
       - /var/log:/var/log
