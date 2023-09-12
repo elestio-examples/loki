@@ -18,6 +18,8 @@ ports:
     login: "root"
     password: "random_password"
 environments:
+  - key: "SOFTWARE_VERSION_TAG"
+    value: "2.8.0"
   - key: "ADMIN_PASSWORD"
     value: "random_password"
   - key: "ADMIN_EMAIL"
@@ -26,7 +28,6 @@ environments:
     value: "[CI_CD_DOMAIN]"
   - key: "SMTP_FROM_EMAIL"
     value: "[DOMAIN]@vm.elestio.app"
-
 config:
   runTime: "dockerCompose"
   version: ""
